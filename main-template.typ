@@ -47,6 +47,14 @@
 
 #set heading(numbering: "1.1.1")
 
+// 一级标题样式
+#show heading.where(level: 1): it => {
+  set text(size: 18pt, weight: "bold")
+  v(0.5em)
+  it
+  v(0.3em)
+}
+
 #set par(
   justify: true,
   leading: 1.2em,
