@@ -17,10 +17,6 @@
   doc-title: "用户手册",                    // 文档标题
   author: "开发团队",                       // 作者/开发团队
   date: "2025年12月",                      // 编制日期
-  
-  // 情感分析阈值（如适用）
-  positive-threshold: 0.6,
-  negative-threshold: 0.4,
 )
 
 // ======================= 颜色配置 =======================
@@ -65,6 +61,13 @@
   )
   
   set heading(numbering: "1.1.1")
+
+  show heading.where(level: 1): it => {
+    set text(size: 18pt, weight: "bold")
+    v(0.5em)
+    it
+    v(0.3em)
+  }
   
   set par(
     justify: true,

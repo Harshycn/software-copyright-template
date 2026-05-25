@@ -13,68 +13,15 @@
   doc-title: "用户手册",
   author: "XX科技有限公司",
   date: "2025年12月",
-  positive-threshold: 0.6,
-  negative-threshold: 0.4,
 )
 
-// ======================= 页面设置 =======================
-#set document(
-  title: config.software-name + config.doc-title,
-  author: config.author,
-)
-
-#set page(
-  paper: "a4",
-  margin: (x: 2.5cm, y: 2.5cm),
-  header: [
-    #set text(9pt, fill: gray)
-    #config.software-name #config.version — #config.doc-title
-    #h(1fr)
-  ],
-  footer: context [
-    #set text(9pt, fill: gray)
-    #h(1fr)
-    #counter(page).display()
-    #h(1fr)
-  ],
-)
-
-#set text(
-  font: ("Source Han Sans SC", "SimHei", "Microsoft YaHei"),
-  size: 11pt,
-  lang: "zh",
-)
-
-#set heading(numbering: "1.1.1")
-
-#set par(
-  justify: true,
-  leading: 1.2em,
-  first-line-indent: 2em,
-)
+#show: doc => setup-page(doc, config)
 
 // ======================= 封面页 =======================
-#page(footer: none)[
-  #v(3cm)
-  #align(center)[
-    #text(size: 28pt, weight: "bold")[#config.software-name]
-    #v(1cm)
-    #text(size: 22pt, weight: "bold")[#config.doc-title]
-    #v(2cm)
-    #text(size: 18pt, weight: "bold")[版本：#config.version]
-    #v(0.5cm)
-    #text(size: 14pt)[编制日期：#config.date]
-  ]
-]
+#cover-page(config)
 
 // ======================= 目录页 =======================
-#page()[
-  #align(center)[
-    #text(size: 18pt, weight: "bold")[目 录]
-  ]
-  #v(1cm)
-  #outline(title: none, indent: 1.5em, depth: 3)
-]
+#toc-page()
 
 // ======================= 正文 =======================
 #pagebreak()

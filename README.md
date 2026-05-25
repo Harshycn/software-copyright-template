@@ -12,6 +12,7 @@
 - 🔧 模块化组件设计（卡片、截图占位符等）
 - 🌍 支持中文字体渲染
 - 📱 响应式图片和截图处理
+- 🧠 提供面向软著用户手册生成的 AI 提示词
 - ⚡ 快速编译和生成
 
 ## 📁 文件结构
@@ -20,6 +21,9 @@
 .
 ├── template.typ         # 核心模板文件（样式、组件定义）
 ├── main-template.typ    # 主文档模板（复制此文件开始编写）
+├── example.typ          # 组件使用示例
+├── PROMPT.md            # AI 生成用户手册的提示词
+├── LICENSE              # 开源许可证
 └── README.md            # 项目说明
 ```
 
@@ -78,6 +82,10 @@ cp main-template.typ my-manual.typ
 ```bash
 typst compile my-manual.typ my-manual.pdf
 ```
+
+### 6. 使用 AI 提示词生成内容
+
+如果需要让 AI 根据项目资料自动生成用户手册，可参考 [PROMPT.md](PROMPT.md)。生成结果建议保存为新的 `.typ` 文件，并继续复用 `template.typ` 中的组件。
 
 
 ## 📝 常用组件
