@@ -31,6 +31,17 @@
   bg-light: luma(250),          // 浅色背景
 )
 
+// ======================= 代码字体配置 =======================
+#let code-fonts = (
+  "Sarasa Mono SC",
+  "Source Han Mono SC",
+  "Noto Sans Mono CJK SC",
+  "Consolas",
+  "Source Code Pro",
+  "Courier New",
+  "Microsoft YaHei",
+)
+
 // ======================= 页面设置 =======================
 #let setup-page(doc, config) = {
   set document(
@@ -209,7 +220,7 @@
     radius: 2pt,
     stroke: 0.5pt + colors.border,
     fill: colors.bg-light,
-  )[#text(size: 9pt, font: "Consolas")[#key]]
+  )[#text(size: 9pt, font: code-fonts)[#key]]
 }
 
 // ======================= 代码块样式 =======================
@@ -221,7 +232,7 @@
     stroke: 0.5pt + colors.border,
     fill: rgb("#f5f5f5"),
   )[
-    #text(size: 9pt, font: ("Consolas", "Source Code Pro", "Courier New"))[
+    #text(size: 9pt, font: code-fonts)[
       #raw(code, lang: lang)
     ]
   ]
